@@ -37,13 +37,23 @@ class Converter
         /*********************************************************************\
         |* Dump out header info to the passed file
         \*********************************************************************/
+        void _unicode(FILE *fp, std::string name);
         void _header(FILE *fp, std::string name);
         void _heights(FILE *fp, std::string name);
         void _widths(FILE *fp, std::string name);
         void _advance(FILE *fp, std::string name);
+        void _dx(FILE *fp, std::string name);
+        void _dy(FILE *fp, std::string name);
+        void _padding(FILE *fp, std::string name);
+        void _bitmaps(FILE *fp, std::string name);
+        void _macro(FILE *fp, std::string name);
         void _footer(FILE *fp, std::string name);
         
-        void _dump8(FILE *fp, std::string name, std::string type, uint8_t *data);
+        void _dump8(FILE *fp, std::string name,
+					std::string type, uint8_t *data,
+					const char *fmt);
+        void _dump32(FILE *fp, std::string name,
+					 std::string type, uint32_t *data);
     };
 
 #endif /* Converter_h */
